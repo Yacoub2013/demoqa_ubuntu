@@ -14,4 +14,9 @@ def test_navigation(browser):
     time.sleep(5)
 
 
-
+def test_visible_nav_bar(browser):
+    page = ElementsPage(browser)
+    page.visit()
+    assert not page.nav.visible()
+    browser.set_window_size(700, 700)
+    assert page.nav.visible()
