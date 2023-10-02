@@ -10,3 +10,4 @@ class TextBox(BasePage):
 
 
         self.first_name = WebElement(driver, '#userName')
+        # self.placeholder_full_name = WebElement(driver, '#userName')

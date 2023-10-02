@@ -1,6 +1,6 @@
-from selenium.common.exceptions import NoSuchElementException
 from pages.base_page import BasePage
 from components.components import WebElement
+
 
 class ElementsPage(BasePage):
     def __init__(self, driver):
@@ -14,3 +14,4 @@ class ElementsPage(BasePage):
         self.btn_sidebar_first_checkbox = WebElement(driver, 'div:nth-child(1)>div>ul>#item-1>span')
         self.btns_first_menu = WebElement(driver, 'div:nth-child(1)>div>ul>li')
         self.nav = WebElement(driver, '#app > div > div > div.row > div:nth-child(1) > nav')
+        self.block_menu = WebElement(driver, 'div.row > div:nth-child(1)')
