@@ -10,18 +10,12 @@ from pages.demoqa import DemoQa
 from pages.base_page import BasePage
 
 
-def test_navigation(browser):
-    page = DemoQa(browser)
-    page.visit()
-    assert browser.title == 'DEMOQA'
-    # browser.set_window_size(2000, 2000)
-    time.sleep(5)
-
-
 @pytest.mark.parametrize("pages", [Accordion, Alerts, DemoQa, BrowserTab])
 def test_check_title_all_pages(browser, pages):
     page = pages(browser)
     page.visit()
-    # time.sleep(2)
-    assert page.get_title() == 'DEMOQA'
+    time.sleep(2)
+    assert page.metaView.exist()
+    assert page.metaView.get_dom_attribute('name') == 'viewport'
+    assert page.metaView.get_dom_attribute('content') == 'width=device-width,initial-scale=1'
 

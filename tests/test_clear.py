@@ -1,7 +1,7 @@
 import time
 
 from conftest import browser
-from pages.text_box import TextBox
+from tests.text_box import TextBox
 
 
 def test_clear(browser):
